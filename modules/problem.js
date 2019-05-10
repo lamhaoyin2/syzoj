@@ -670,7 +670,7 @@ app.post('/problem/:id/submit', app.multer.fields([{ name: 'answer', maxCount: 1
       if (!contest) throw new ErrorMessage('无此比赛。');
       if ((!contest.isRunning()) && (!await contest.isSupervisior(curUser))) throw new ErrorMessage('比赛未开始或已结束。');
       let problems_id = await contest.getProblems();
-      if (!problems_id.includes(id)) throw new ErrorMessage('无此题目。');
+//      if (!problems_id.includes(id)) throw new ErrorMessage('无此题目。');
 
       judge_state.type = 1;
       judge_state.type_info = contest_id;
